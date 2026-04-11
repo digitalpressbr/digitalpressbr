@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Press BR — E-books Exclusivos</title>
+    <title>Digital Press BR — Curadoria de E-books que Transformam Vidas</title>
+    <meta name="description" content="Os melhores e-books de Renda Extra com IA, Emagrecimento e Finanças. Curadoria selecionada por Rodrigo Nascimento.">
+    <meta property="og:title" content="Digital Press BR — E-books Exclusivos">
+    <meta property="og:description" content="Curadoria dos melhores e-books de Renda Extra, Saúde e Finanças">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
@@ -15,33 +18,78 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 40px 16px;
+            padding: 32px 16px;
+            background-image:
+                radial-gradient(circle at 20% 10%, rgba(201, 162, 39, 0.08), transparent 40%),
+                radial-gradient(circle at 80% 90%, rgba(201, 162, 39, 0.06), transparent 40%);
         }
-        .container { max-width: 420px; width: 100%; text-align: center; }
-        .profile { margin-bottom: 32px; }
+        .container { max-width: 460px; width: 100%; }
+        .profile { text-align: center; margin-bottom: 24px; }
         .avatar {
-            width: 96px; height: 96px; border-radius: 50%;
+            width: 104px; height: 104px; border-radius: 50%;
             background: linear-gradient(135deg, #c9a227, #f0d060, #c9a227);
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 16px; font-size: 36px; font-weight: 800;
-            color: #0a0a0a; letter-spacing: -1px;            border: 3px solid #c9a227;
-            box-shadow: 0 0 30px rgba(201, 162, 39, 0.3);
+            margin: 0 auto 16px; font-size: 40px; font-weight: 900;
+            color: #0a0a0a; letter-spacing: -2px;
+            border: 3px solid #c9a227;
+            box-shadow: 0 0 40px rgba(201, 162, 39, 0.35);
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(201, 162, 39, 0.3); }
+            50% { box-shadow: 0 0 50px rgba(201, 162, 39, 0.55); }
         }
         .profile h1 {
-            font-size: 22px; font-weight: 800; margin-bottom: 4px;
+            font-size: 26px; font-weight: 900; margin-bottom: 6px;
             background: linear-gradient(135deg, #ffffff, #c9a227);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.5px;
         }
-        .profile p { font-size: 14px; color: #999; line-height: 1.5; }
-        .profile .author { font-size: 12px; color: #666; margin-top: 4px; }
-        .links { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
-        .link-card {
+        .profile .tagline {
+            font-size: 15px; color: #c9a227; font-weight: 600;
+            margin-bottom: 6px; letter-spacing: 0.3px;
+        }
+        .profile .niches {
+            font-size: 13px; color: #888; line-height: 1.5;
+        }
+        .profile .author {
+            font-size: 12px; color: #555; margin-top: 6px;
+            font-weight: 500;
+        }
+        .stats {
+            display: flex; justify-content: center; gap: 20px;
+            margin: 20px 0 32px; padding: 14px 0;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 18px; font-weight: 800; color: #c9a227;
             display: block;
-            background: linear-gradient(145deg, #1a1a1a, #111);
+        }
+        .stat-label {
+            font-size: 10px; color: #666; text-transform: uppercase;
+            letter-spacing: 1px; margin-top: 2px;
+        }
+        .section-title {
+            font-size: 11px; font-weight: 700;
+            color: #c9a227; text-transform: uppercase;
+            letter-spacing: 2px; margin: 32px 0 14px;
+            padding: 0 4px; display: flex; align-items: center; gap: 10px;
+        }
+        .section-title::before, .section-title::after {
+            content: ''; flex: 1; height: 1px;
+            background: linear-gradient(90deg, transparent, #2a2a2a, transparent);
+        }
+        .links { display: flex; flex-direction: column; gap: 12px; }
+        .link-card {
+            background: linear-gradient(145deg, #161616, #0d0d0d);
             border: 1px solid #2a2a2a;
-            border-radius: 16px;
-            padding: 20px 24px;
+            border-radius: 18px;
+            padding: 20px 22px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -50,139 +98,311 @@
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
             background: linear-gradient(90deg, transparent, #c9a227, transparent);
             opacity: 0; transition: opacity 0.3s ease;
-        }        .link-card:hover {
-            border-color: #c9a227; transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(201, 162, 39, 0.15);
+        }
+        .link-card:hover {
+            border-color: #c9a227;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(201, 162, 39, 0.2);
         }
         .link-card:hover::before { opacity: 1; }
-        .card-emoji { font-size: 28px; margin-bottom: 8px; display: block; }
-        .card-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-        .card-subtitle { font-size: 13px; color: #999; margin-bottom: 10px; line-height: 1.4; }
-        .card-price { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; }
-        .price-old { font-size: 13px; color: #666; text-decoration: line-through; }
-        .price-new { font-size: 18px; font-weight: 800; color: #c9a227; }
+        .card-header {
+            display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;
+        }
+        .card-icon {
+            font-size: 32px; line-height: 1;
+            flex-shrink: 0;
+        }
+        .card-header-text { flex: 1; min-width: 0; }
+        .card-title {
+            font-size: 16px; font-weight: 800; color: #fff;
+            margin-bottom: 4px; line-height: 1.3;
+            display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+        }
+        .card-subtitle {
+            font-size: 13px; color: #999;
+            line-height: 1.5; margin-bottom: 12px;
+        }
+        .card-price {
+            display: flex; align-items: baseline; gap: 10px;
+            margin-bottom: 14px;
+        }
+        .price-old {
+            font-size: 13px; color: #555;
+            text-decoration: line-through;
+        }
+        .price-new {
+            font-size: 22px; font-weight: 900; color: #c9a227;
+        }
+        .price-install {
+            font-size: 11px; color: #777;
+        }
         .badge {
             display: inline-block;
             background: linear-gradient(135deg, #c9a227, #e6c94a);
-            color: #0a0a0a; font-size: 10px; font-weight: 800;
-            padding: 3px 10px; border-radius: 20px;
-            text-transform: uppercase; letter-spacing: 0.5px; margin-left: 8px;
+            color: #0a0a0a; font-size: 9px; font-weight: 800;
+            padding: 3px 8px; border-radius: 20px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            white-space: nowrap;
         }
-        .buy-buttons { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+        .badge.red {
+            background: linear-gradient(135deg, #e04b2f, #f06543);
+            color: #fff;
+        }
+        .badge.green {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: #fff;
+        }
+        .badge.blue {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: #fff;
+        }
+        .buy-buttons {
+            display: flex; flex-direction: column; gap: 8px;
+        }
         .btn-buy {
-            display: block; text-decoration: none;
-            padding: 12px 20px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            text-decoration: none;
+            padding: 13px 20px; border-radius: 11px;
             font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700;
             text-align: center; transition: all 0.2s ease;
+            position: relative; overflow: hidden;
         }
         .btn-kiwify { background: linear-gradient(135deg, #c9a227, #e6c94a); color: #0a0a0a; }
-        .btn-kiwify:hover {            background: linear-gradient(135deg, #d4ad2e, #f0d860);
-            transform: scale(1.02); box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
+        .btn-kiwify:hover {
+            background: linear-gradient(135deg, #d4ad2e, #f0d860);
+            transform: scale(1.02); box-shadow: 0 4px 20px rgba(201, 162, 39, 0.4);
         }
         .btn-hotmart { background: linear-gradient(135deg, #e04b2f, #f06543); color: #ffffff; }
         .btn-hotmart:hover {
             background: linear-gradient(135deg, #e85a40, #f47a5a);
-            transform: scale(1.02); box-shadow: 0 4px 15px rgba(224, 75, 47, 0.3);
+            transform: scale(1.02); box-shadow: 0 4px 20px rgba(224, 75, 47, 0.4);
         }
-        .footer { text-align: center; padding: 20px 0; border-top: 1px solid #1a1a1a; }
-        .footer p { font-size: 12px; color: #444; }
-        .footer .social { margin-top: 12px; display: flex; justify-content: center; gap: 20px; }
-        .footer .social a { color: #666; text-decoration: none; font-size: 13px; transition: color 0.3s; }
+        .trust-row {
+            display: flex; justify-content: space-between;
+            padding-top: 10px; margin-top: 10px;
+            border-top: 1px solid #1f1f1f;
+            font-size: 10px; color: #666;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 4px;
+        }
+        .trust-item span { color: #22c55e; font-weight: 700; }
+        .featured {
+            border-color: #c9a227;
+            background: linear-gradient(145deg, #1a1606, #0f0d03);
+            box-shadow: 0 0 20px rgba(201, 162, 39, 0.1);
+        }
+        .featured::after {
+            content: 'MAIS VENDIDO';
+            position: absolute; top: 12px; right: -32px;
+            background: #c9a227; color: #0a0a0a;
+            font-size: 9px; font-weight: 900;
+            padding: 4px 36px; transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+        .footer {
+            text-align: center; padding: 32px 0 20px;
+            margin-top: 32px;
+            border-top: 1px solid #1a1a1a;
+        }
+        .footer p { font-size: 11px; color: #444; margin-bottom: 12px; }
+        .footer .social {
+            display: flex; justify-content: center; gap: 24px;
+        }
+        .footer .social a {
+            color: #888; text-decoration: none; font-size: 13px;
+            font-weight: 600; transition: color 0.3s;
+            display: flex; align-items: center; gap: 6px;
+        }
         .footer .social a:hover { color: #c9a227; }
-        .pulse { animation: pulse 2s ease-in-out infinite; }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 30px rgba(201, 162, 39, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(201, 162, 39, 0.5); }
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <div class="avatar pulse">DP</div>
+            <div class="avatar">DP</div>
             <h1>Digital Press BR</h1>
-            <p>E-books que transformam sua vida</p>            <p>Renda Extra &bull; Sa&uacute;de &bull; Finan&ccedil;as</p>
+            <p class="tagline">A melhor curadoria de e-books do Brasil</p>
+            <p class="niches">Renda Extra &bull; IA &bull; Sa&uacute;de &bull; Finan&ccedil;as</p>
             <p class="author">por Rodrigo Nascimento</p>
         </div>
+
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number">8+</span>
+                <div class="stat-label">E-books</div>
+            </div>
+            <div class="stat">
+                <span class="stat-number">100%</span>
+                <div class="stat-label">Digital</div>
+            </div>
+            <div class="stat">
+                <span class="stat-number">7 dias</span>
+                <div class="stat-label">Garantia</div>
+            </div>
+        </div>
+
+        <!-- ================ RENDA EXTRA & IA ================ -->
+        <div class="section-title">&#x1F4B0; Renda Extra &amp; IA</div>
         <div class="links">
-            <div class="link-card">
-                <span class="card-emoji">&#x1F916;</span>
-                <div class="card-title">Renda Extra com IA: 30 Formas<span class="badge">Mais vendido</span></div>
-                <div class="card-subtitle">Aprenda a ganhar dinheiro usando Intelig&ecirc;ncia Artificial. 30 m&eacute;todos reais, sem experi&ecirc;ncia necess&aacute;ria.</div>
+
+            <div class="link-card featured">
+                <div class="card-header">
+                    <div class="card-icon">&#x1F916;</div>
+                    <div class="card-header-text">
+                        <div class="card-title">Renda Extra com IA: 30 Formas <span class="badge">#1</span></div>
+                    </div>
+                </div>
+                <div class="card-subtitle">Aprenda a ganhar dinheiro usando Intelig&ecirc;ncia Artificial. 30 m&eacute;todos pr&aacute;ticos e testados, sem experi&ecirc;ncia t&eacute;cnica.</div>
                 <div class="card-price">
                     <span class="price-old">R$ 47,00</span>
                     <span class="price-new">R$ 19,90</span>
+                    <span class="price-install">ou 3x R$ 6,63</span>
                 </div>
                 <div class="buy-buttons">
-                    <a href="https://pay.kiwify.com.br/0fVNIzo" target="_blank" class="btn-buy btn-kiwify">Comprar na Kiwify</a>
-                    <a href="https://go.hotmart.com/R105200773Q" target="_blank" class="btn-buy btn-hotmart">Comprar na Hotmart</a>
+                    <a href="https://pay.kiwify.com.br/0fVNIzo" target="_blank" class="btn-buy btn-kiwify">&#x1F4B3; Comprar na Kiwify</a>
+                    <a href="https://go.hotmart.com/R105200773Q" target="_blank" class="btn-buy btn-hotmart">&#x1F525; Comprar na Hotmart</a>
+                </div>
+                <div class="trust-row">
+                    <div class="trust-item">&#x2705; <span>Acesso imediato</span></div>
+                    <div class="trust-item">&#x1F4F1; <span>Mobile &amp; Desktop</span></div>
+                    <div class="trust-item">&#x1F512; <span>Compra segura</span></div>
                 </div>
             </div>
+
             <div class="link-card">
-                <span class="card-emoji">&#x1F34E;</span>
-                <div class="card-title">Secar em 21 Dias: Receitas Fit</div>
-                <div class="card-subtitle">Plano alimentar completo com receitas f&aacute;ceis, baratas e deliciosas. Resultado em 3 semanas.</div>
-                <div class="card-price">
-                    <span class="price-old">R$ 39,90</span>
-                    <span class="price-new">R$ 14,90</span>
-                </div>                <div class="buy-buttons">
-                    <a href="https://pay.kiwify.com.br/RzS8HNU" target="_blank" class="btn-buy btn-kiwify">Comprar na Kiwify</a>
-                    <a href="https://go.hotmart.com/U105200820D" target="_blank" class="btn-buy btn-hotmart">Comprar na Hotmart</a>
+                <div class="card-header">
+                    <div class="card-icon">&#x1F4B5;</div>
+                    <div class="card-header-text">
+                        <div class="card-title">Renda Passiva do Zero <span class="badge green">NOVO</span></div>
+                    </div>
                 </div>
-            </div>
-            <div class="link-card">
-                <span class="card-emoji">&#x1F4B0;</span>
-                <div class="card-title">Renda Passiva do Zero<span class="badge">Novo</span></div>
                 <div class="card-subtitle">Guia completo para criar fontes de renda passiva come&ccedil;ando sem investimento. Liberdade financeira de verdade.</div>
                 <div class="card-price">
                     <span class="price-old">R$ 67,00</span>
                     <span class="price-new">R$ 24,90</span>
                 </div>
                 <div class="buy-buttons">
-                    <a href="https://pay.kiwify.com.br/fjix7TF" target="_blank" class="btn-buy btn-kiwify">Comprar na Kiwify</a>
-                    <a href="https://go.hotmart.com/O105200847A" target="_blank" class="btn-buy btn-hotmart">Comprar na Hotmart</a>
+                    <a href="https://pay.kiwify.com.br/fjix7TF" target="_blank" class="btn-buy btn-kiwify">&#x1F4B3; Comprar na Kiwify</a>
+                    <a href="https://go.hotmart.com/O105200847A" target="_blank" class="btn-buy btn-hotmart">&#x1F525; Comprar na Hotmart</a>
                 </div>
             </div>
-            <div style="text-align:center;margin:28px 0 18px;color:#888;font-size:13px;letter-spacing:2px;text-transform:uppercase;">&#x2B50; Recomendados</div>
+
             <div class="link-card">
-                <span class="card-emoji">&#x1F957;</span>
-                <div class="card-title">Receitas Como Emagrecer<span class="badge">65% OFF</span></div>
+                <div class="card-header">
+                    <div class="card-icon">&#x1F4B8;</div>
+                    <div class="card-header-text">
+                        <div class="card-title">F&oacute;rmula Enriquecendo Online <span class="badge red">PREMIUM</span></div>
+                    </div>
+                </div>
+                <div class="card-subtitle">M&eacute;todo completo para construir neg&oacute;cio digital do zero e alcan&ccedil;ar liberdade financeira. Para quem quer resultado s&eacute;rio.</div>
+                <div class="card-price">
+                    <span class="price-new">R$ 1.850,00</span>
+                    <span class="price-install">ou 12x R$ 189,16</span>
+                </div>
+                <div class="buy-buttons">
+                    <a href="https://go.hotmart.com/W105289647C" target="_blank" class="btn-buy btn-hotmart">&#x1F525; Comprar na Hotmart</a>
+                </div>
+            </div>
+
+            <div class="link-card">
+                <div class="card-header">
+                    <div class="card-icon">&#x1F3ED;</div>
+                    <div class="card-header-text">
+                        <div class="card-title">F&aacute;brica de Comiss&otilde;es 2.0 <span class="badge blue">AFILIADOS</span></div>
+                    </div>
+                </div>
+                <div class="card-subtitle">Treinamento completo para quem quer ser afiliado e faturar com marketing digital. Passo a passo do zero ao primeiro R$ 10k.</div>
+                <div class="card-price">
+                    <span class="price-new">R$ 247,00</span>
+                    <span class="price-install">ou 12x R$ 25,25</span>
+                </div>
+                <div class="buy-buttons">
+                    <a href="https://pay.kiwify.com.br/" target="_blank" class="btn-buy btn-kiwify">&#x1F4B3; Comprar na Kiwify</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================ EMAGRECIMENTO & SA&Uacute;DE ================ -->
+        <div class="section-title">&#x1F4AA; Emagrecimento &amp; Sa&uacute;de</div>
+        <div class="links">
+
+            <div class="link-card">
+                <div class="card-header">
+                    <div class="card-icon">&#x1F34E;</div>
+                    <div class="card-header-text">
+                        <div class="card-title">Secar em 21 Dias: Receitas Fit</div>
+                    </div>
+                </div>
+                <div class="card-subtitle">Plano alimentar completo com 37 receitas f&aacute;ceis, baratas e deliciosas. Resultado em 3 semanas, sem dieta maluca.</div>
+                <div class="card-price">
+                    <span class="price-old">R$ 39,90</span>
+                    <span class="price-new">R$ 14,90</span>
+                </div>
+                <div class="buy-buttons">
+                    <a href="https://pay.kiwify.com.br/RzS8HNU" target="_blank" class="btn-buy btn-kiwify">&#x1F4B3; Comprar na Kiwify</a>
+                    <a href="https://go.hotmart.com/U105200820D" target="_blank" class="btn-buy btn-hotmart">&#x1F525; Comprar na Hotmart</a>
+                </div>
+            </div>
+
+            <div class="link-card">
+                <div class="card-header">
+                    <div class="card-icon">&#x1F957;</div>
+                    <div class="card-header-text">
+                        <div class="card-title">Receitas Como Emagrecer <span class="badge red">65% OFF</span></div>
+                    </div>
+                </div>
                 <div class="card-subtitle">Vers&atilde;o completa com planejamento de card&aacute;pio, lista de compras, desafio 90 dias e suporte premium. Garantia 7 dias.</div>
                 <div class="card-price">
+                    <span class="price-old">R$ 280,00</span>
                     <span class="price-new">R$ 98,01</span>
                 </div>
                 <div class="buy-buttons">
-                    <a href="https://go.hotmart.com/W105289647C" target="_blank" class="btn-buy btn-hotmart">Comprar na Hotmart</a>
+                    <a href="https://go.hotmart.com/W105289647C" target="_blank" class="btn-buy btn-hotmart">&#x1F525; Comprar na Hotmart</a>
                 </div>
             </div>
+
             <div class="link-card">
-                <span class="card-emoji">&#x1F4AA;</span>
-                <div class="card-title">Emagrecer PRO</div>
-                <div class="card-subtitle">Transforme seu corpo e mente. Programa completo de emagrecimento saud&aacute;vel com acompanhamento.</div>
-                <div class="card-price">
-                    <span class="price-new">R$ 28,90</span>
+                <div class="card-header">
+                    <div class="card-icon">&#x1F3CB;</div>
+                    <div class="card-header-text">
+                        <div class="card-title">RESET para Emagrecer <span class="badge">-32 KG</span></div>
+                    </div>
                 </div>
-                <div class="buy-buttons">
-                    <a href="https://pay.kiwify.com.br/KLzpkXD8" target="_blank" class="btn-buy btn-kiwify">Comprar na Kiwify</a>
-                </div>
-            </div>
-            <div class="link-card">
-                <span class="card-emoji">&#x1F3CB;</span>
-                <div class="card-title">RESET para Emagrecer</div>
-                <div class="card-subtitle">M&eacute;todo do Dr. Bruno Duarte (+500k seguidores). Elimine at&eacute; 32kg em 90 dias com acompanhamento m&eacute;dico.</div>
+                <div class="card-subtitle">M&eacute;todo do Dr. Bruno Duarte (+500k seguidores). Elimine at&eacute; 32kg em 90 dias com acompanhamento m&eacute;dico profissional.</div>
                 <div class="card-price">
                     <span class="price-new">R$ 77,70</span>
                 </div>
                 <div class="buy-buttons">
-                    <a href="https://pay.kiwify.com.br/j3WL954u" target="_blank" class="btn-buy btn-kiwify">Comprar na Kiwify</a>
+                    <a href="https://pay.kiwify.com.br/j3WL954u" target="_blank" class="btn-buy btn-kiwify">&#x1F4B3; Comprar na Kiwify</a>
                 </div>
             </div>
+
+            <div class="link-card">
+                <div class="card-header">
+                    <div class="card-icon">&#x1F525;</div>
+                    <div class="card-header-text">
+                        <div class="card-title">Emagrecer PRO</div>
+                    </div>
+                </div>
+                <div class="card-subtitle">Transforme seu corpo e mente. Programa completo de emagrecimento saud&aacute;vel com acompanhamento e suporte.</div>
+                <div class="card-price">
+                    <span class="price-new">R$ 28,90</span>
+                </div>
+                <div class="buy-buttons">
+                    <a href="https://pay.kiwify.com.br/KLzpkXD8" target="_blank" class="btn-buy btn-kiwify">&#x1F4B3; Comprar na Kiwify</a>
+                </div>
+            </div>
+
         </div>
+
         <div class="footer">
             <p>&copy; 2026 Digital Press BR &mdash; Todos os direitos reservados</p>
+            <p style="margin-top:4px;color:#333;">Compra 100% segura &bull; Acesso imediato ap&oacute;s pagamento</p>
             <div class="social">
-                <a href="https://www.tiktok.com/@digitalpressbr" target="_blank">TikTok</a>
-                <a href="https://www.instagram.com/digitalpressbr" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@digitalpressbr" target="_blank">&#x1F3B5; TikTok</a>
+                <a href="https://www.instagram.com/digitalpressbr" target="_blank">&#x1F4F7; Instagram</a>
             </div>
         </div>
     </div>
